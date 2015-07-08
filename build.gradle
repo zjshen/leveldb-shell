@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+sourceCompatibility = 1.7
+version = '0.1.0'
+mainClassName = "io.zjshen.leveldb.shell.LevelDBSehll"
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'LevelDB Shell',
+                   'Implementation-Version': '0.1.0'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.fusesource.leveldbjni:leveldbjni-all:1.8'
+    compile 'jline:jline:2.12'
+    compile 'com.google.guava:guava:18.0'
+    testCompile 'junit:junit:4.12'
+}
